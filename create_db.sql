@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  mer. 24 oct. 2018 à 13:20
+-- Généré le :  mer. 24 oct. 2018 à 13:54
 -- Version du serveur :  5.7.21
 -- Version de PHP :  5.6.35
 
@@ -21,6 +21,8 @@ SET time_zone = "+00:00";
 --
 -- Base de données :  `iut_info_website`
 --
+CREATE DATABASE IF NOT EXISTS `iut_info_website` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `iut_info_website`;
 
 -- --------------------------------------------------------
 
