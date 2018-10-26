@@ -3,3 +3,10 @@ Theme Name: IUT (child theme)
 Author: ggwpteam
 Template: moesia
 */
+
+/*
+Fixing the glitched background of the navbar
+*/
+.sticky-wrapper {
+    background-color: unset;
+}
