@@ -6,7 +6,13 @@ CREATE TABLE IF NOT EXISTS address (
     city varchar(200),
     state varchar(200),
     postal_code varchar(200),
-    supplement varchar(200)
+    supplement varchar(200),
+    student_id int NOT NULL,
+    FOREIGN KEY student_id) REFERENCES student(id),
+    compagny_id int NOT NULL,
+    FOREIGN KEY compagny_id) REFERENCES compagny(id),
+    teacher_id int NOT NULL,
+    FOREIGN KEY teacher_id) REFERENCES teacher(id)    
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE IF NOT EXISTS student (
@@ -19,8 +25,7 @@ CREATE TABLE IF NOT EXISTS student (
     birthdate datetime,
     main_phone_number varchar(30),
     profil_picture binary(10000000),
-    address_id int NOT NULL,
-    FOREIGN KEY (address_id) REFERENCES address(id)
+    
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE IF NOT EXISTS testimonial (
@@ -39,7 +44,7 @@ CREATE TABLE IF NOT EXISTS teacher (
     lastname varchar(200),
     email varchar(200) UNIQUE,
     password varchar(32),
-    main_phone_number varchar(30)
+    main_phone_number varchar(30),
     profil_picture binary(10000000)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -60,22 +65,13 @@ CREATE TABLE IF NOT EXISTS formation (
     price float
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-CREATE TABLE IF NOT EXISTS traineeship_offer (
+CREATE TABLE IF NOT EXISTS offer (
     id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
     email_contact varchar(200) UNIQUE,
     contact_phone_number varchar(30),
     description varchar(10000),
     remuneration float,
-    compagny_id int NOT NULL,
-    FOREIGN KEY (compagny_id) REFERENCES compagny(id)
-)ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-CREATE TABLE IF NOT EXISTS apprenticeship_offer (
-    id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    email_contact varchar(200) UNIQUE,
-    contact_phone_number varchar(30),
-    description varchar(10000),
-    remuneration float,
+    type enum ('stage','alternance'),
     compagny_id int NOT NULL,
     FOREIGN KEY (compagny_id) REFERENCES compagny(id)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -85,3 +81,9 @@ CREATE TABLE IF NOT EXISTS interactive_map_location (
     name varchar(200),
     website varchar(200)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+
+
+
