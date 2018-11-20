@@ -17,3 +17,19 @@ Removing the dots on the heading picture
 .site-header .overlay {
     display: none;
 }
+
+/*
+Matching style with col changes
+*/
+@media (max-width: 320px) {
+	.site-branding.col-md-2 {
+		width: 100%;
+		text-align: center;
+		padding-top: 20px;
+		padding-bottom: 20px;
+    }
+}
+
+.main-navigation a {
+    font-size: 18px;
+}
