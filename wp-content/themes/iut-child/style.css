@@ -10,3 +10,10 @@ Fixing the glitched background of the navbar
 .sticky-wrapper {
     background-color: unset;
 }
+
+/*
+Removing the dots on the heading picture
+*/
+.site-header .overlay {
+    display: none;
+}
