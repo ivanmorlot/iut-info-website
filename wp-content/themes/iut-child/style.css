@@ -22,7 +22,7 @@ Removing the dots on the heading picture
 Matching style with col changes
 */
 @media (max-width: 320px) {
-	.site-branding.col-md-2 {
+	.site-branding.col-md-3 {
 		width: 100%;
 		text-align: center;
 		padding-top: 20px;
