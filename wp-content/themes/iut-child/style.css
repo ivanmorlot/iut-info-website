@@ -22,11 +22,11 @@ Removing the dots on the heading picture
 Matching style with col changes
 */
 @media (max-width: 320px) {
-	.site-branding.col-md-3 {
-		width: 100%;
-		text-align: center;
-		padding-top: 20px;
-		padding-bottom: 20px;
+    .site-branding.col-md-3 {
+        width: 100%;
+        text-align: center;
+        padding-top: 20px;
+        padding-bottom: 20px;
     }
 }
 
@@ -42,6 +42,14 @@ Matching style with col changes
 }
 
 .main-navigation li:not(:first-of-type) a:hover {
-	color: #50416f;
-	border-bottom: 4px solid #cee137;
+    color: #50416f;
+    border-bottom: 4px solid #cee137;
+}
+
+::selection{
+    color: #50416f;
+}
+
+::-moz-selection {
+    color: #50416f;
 }
