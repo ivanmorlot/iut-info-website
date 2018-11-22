@@ -53,3 +53,25 @@ Matching style with col changes
 ::-moz-selection {
     color: #50416f;
 }
+
+button, html input[type="button"], input[type="reset"], input[type="submit"] {
+    background-color: #cee137;
+    box-shadow: 0 5px 0 #acc544;
+    color: #50416f;
+}
+
+.single_job_listing .application .application_button {
+    margin-bottom: 5px;
+}
+
+.single_job_listing .meta .internship {
+    background-color: #3c2d5e;
+}
+
+.job_listing .internship {
+    color: #3c2d5e;
+}
+
+a {
+    color: #50416f;
+}
