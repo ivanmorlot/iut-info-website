@@ -31,5 +31,17 @@ Matching style with col changes
 }
 
 .main-navigation a {
-    font-size: 18px;
+    font-size: 17px;
+    border-bottom: 4px solid transparent;
+    border-top: 4px solid transparent;
+    transition: 0.3s color, 0.3s border;
+}
+
+.main-navigation li:first-of-type a {
+    padding: 0 10px;
+}
+
+.main-navigation li:not(:first-of-type) a:hover {
+	color: #50416f;
+	border-bottom: 4px solid #cee137;
 }
