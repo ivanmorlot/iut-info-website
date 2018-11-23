@@ -1,3 +1,4 @@
+CREATE DATABASE 
 USE iut_info_website;
 
 CREATE TABLE IF NOT EXISTS address (
@@ -6,13 +7,7 @@ CREATE TABLE IF NOT EXISTS address (
     city varchar(200),
     state varchar(200),
     postal_code varchar(200),
-    supplement varchar(200),
-    student_id int NOT NULL,
-    FOREIGN KEY student_id) REFERENCES student(id),
-    compagny_id int NOT NULL,
-    FOREIGN KEY compagny_id) REFERENCES compagny(id),
-    teacher_id int NOT NULL,
-    FOREIGN KEY teacher_id) REFERENCES teacher(id)    
+    supplement varchar(200)   
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE IF NOT EXISTS student (
@@ -25,6 +20,8 @@ CREATE TABLE IF NOT EXISTS student (
     birthdate datetime,
     main_phone_number varchar(30),
     profil_picture binary(10000000),
+    address_id int NOT NULL,
+    FOREIGN KEY (address_id) REFERENCES address(id)
     
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -45,7 +42,9 @@ CREATE TABLE IF NOT EXISTS teacher (
     email varchar(200) UNIQUE,
     password varchar(32),
     main_phone_number varchar(30),
-    profil_picture binary(10000000)
+    profil_picture binary(10000000),
+    address_id int NOT NULL,
+    FOREIGN KEY (address_id) REFERENCES address(id)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE IF NOT EXISTS compagny (
@@ -55,7 +54,9 @@ CREATE TABLE IF NOT EXISTS compagny (
     password varchar(32),
     main_phone_number varchar(30),
     compagny_description varchar(10000),
-    compagny_logo binary(10000000)
+    compagny_logo binary(10000000),
+     address_id int NOT NULL,
+    FOREIGN KEY (address_id) REFERENCES address(id)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE IF NOT EXISTS formation (
